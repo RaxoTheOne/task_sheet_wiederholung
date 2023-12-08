@@ -71,6 +71,7 @@ class _NameAgeScreenState extends State<NameAgeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.amber,
         title: Text('Name Age Estimation'),
       ),
       body: Padding(
