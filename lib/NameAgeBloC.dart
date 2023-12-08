@@ -27,12 +27,14 @@ class NameAgeBloc {
     final response = await http.get(Uri.parse(apiUrl + name));
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
+      print('HTTP Response: ${response.body}');
       return data['age'] ?? 0;
     } else {
+      print('HTTP Error: ${response.statusCode}');
       return 0;
     }
   }
-
+  
   void dispose() {
     _nameController.close();
     _ageController.close();
